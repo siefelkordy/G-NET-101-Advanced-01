@@ -171,6 +171,10 @@ namespace G_NET_101_Advanced_01
     //    }
     //}
     #endregion
+
+    #region Q.13
+    //Default value of a generic type parameter in C# can be obtained using the default keyword. The default keyword returns the default value for the specified type parameter. For reference types, the default value is null, and for value types, it is the zero-initialized value (e.g., 0 for numeric types, false for bool, etc.). This allows you to handle cases where a generic type parameter may not have been assigned a specific value yet.
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
