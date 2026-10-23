@@ -8,24 +8,40 @@ namespace G_NET_101_Advanced_01
     #endregion
 
     #region Q.2
-    public class Container<T>
-    {
-        T item;
+    //public class Container<T>
+    //{
+    //    T item;
 
-        public void Add(T value)
-        {
-            this.item = value;
-        }
+    //    public void Add(T value)
+    //    {
+    //        this.item = value;
+    //    }
 
-        public T Get()
-        {
-            return this.item;
-        }
+    //    public T Get()
+    //    {
+    //        return this.item;
+    //    }
 
 
-    }
+    //}
     #endregion
 
+    #region Q.3
+    //Multiple type parameters can be used in a generic class by specifying multiple type parameters in the class definition. Each type parameter can be used independently within the class, allowing for greater flexibility and reusability of the class.
+   public class Pair<TKey, TValue>
+{
+    public TKey Key { get; set; }
+    public TValue Value { get; set; }
+
+    public Pair(TKey key, TValue value)
+    {
+        Key = key;
+        Value = value;
+    }
+}
+
+
+    #endregion
 
 
 
