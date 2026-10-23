@@ -94,18 +94,31 @@ namespace G_NET_101_Advanced_01
 
     #region Q.7
     //The struct constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the struct constraint to a type parameter, it means that the type argument must be a value type (i.e., a struct) and cannot be a reference type (i.e., a class). This constraint ensures that the generic type can only be instantiated with value types, which can help improve performance and reduce memory overhead in certain scenarios.
-    public class Container<T> where T : struct
+    //public class Container<T> where T : struct
+    //{
+    //    public T Value { get; set; }
+
+    //    public Container(T value)
+    //    {
+    //        Value = value;
+    //    }
+    //}
+
+    #endregion
+
+    #region Q.8
+    //A class constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the class constraint to a type parameter, it means that the type argument must be a reference type (i.e., a class) and cannot be a value type (i.e., a struct). This constraint ensures that the generic type can only be instantiated with reference types, which can help improve performance and reduce memory overhead in certain scenarios.
+    public class Container<T> where T : class
     {
         public T Value { get; set; }
-
         public Container(T value)
         {
             Value = value;
         }
     }
 
-
     #endregion
+
 
     internal class Program
     {
