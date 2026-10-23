@@ -134,21 +134,32 @@ namespace G_NET_101_Advanced_01
 
     #region Q.10
     //The interface constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the interface constraint to a type parameter, it means that the type argument must implement a specific interface. This constraint ensures that the generic type can only be instantiated with types that provide the required functionality defined by the interface, which can be useful when you need to work with specific behaviors or methods of the generic type.
-    public class Container<T> where T : IComparable<T>
+    //public class Container<T> where T : IComparable<T>
+    //{
+    //    public T Value { get; set; }
+    //    public Container(T value)
+    //    {
+    //        Value = value;
+    //    }
+    //    public bool IsGreaterThan(T other)
+    //    {
+    //        return Value.CompareTo(other) > 0;
+    //    }
+    //}
+
+    #endregion
+
+    #region Q.11
+    //The base class constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the base class constraint to a type parameter, it means that the type argument must inherit from a specific base class. This constraint ensures that the generic type can only be instantiated with types that derive from the specified base class, which can be useful when you need to work with specific properties or methods of the base class.
+    public class Container<T> where T : BaseClass
     {
         public T Value { get; set; }
         public Container(T value)
         {
             Value = value;
         }
-        public bool IsGreaterThan(T other)
-        {
-            return Value.CompareTo(other) > 0;
-        }
     }
-
     #endregion
-
 
 
     internal class Program
