@@ -43,6 +43,20 @@ namespace G_NET_101_Advanced_01
 
     #endregion
 
+    #region Q.4
+    //A generic method is a method that can work with any data type. It allows you to define a method with a placeholder for the data type, which can be specified when calling the method. This provides flexibility and reusability in your code.
+    public class GenericMethodExample
+    {
+        public static void Swap<T>(ref T a, ref T b)
+        {
+            T temp = a;
+            a = b;
+            b = temp;
+        }
+    }
+
+    #endregion
+
 
 
     internal class Program
