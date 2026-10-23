@@ -57,6 +57,27 @@ namespace G_NET_101_Advanced_01
 
     #endregion
 
+    #region Q.5
+
+    public class FindMaxExample
+    {
+        public static T FindMax<T>(T a, T b) where T : IComparable<T>
+        {
+            T maxValue;
+            if(a.CompareTo(b) > 0)
+            {
+                maxValue = a;
+            }
+            else
+            {
+                maxValue = b;
+            }
+            return maxValue;
+        }
+    }
+
+
+    #endregion
 
 
     internal class Program
