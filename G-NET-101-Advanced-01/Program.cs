@@ -219,6 +219,71 @@ namespace G_NET_101_Advanced_01
     #region Q.19
     //You can inherit from a generic class in C# by specifying the type parameter when defining the derived class. The derived class can then use the generic type parameter in its own methods and properties, allowing for greater flexibility and reusability of the code.
     #endregion
+
+    #region Q.20
+    public class Cache<TKey, TValue>
+    where TKey : notnull
+    {
+        private class CacheItem
+        {
+            public TValue Value { get; set; }
+            public DateTime Expiration { get; set; }
+
+            public CacheItem(TValue value, DateTime expiration)
+            {
+                Value = value;
+                Expiration = expiration;
+            }
+        }
+
+        private Dictionary<TKey, CacheItem> items = new();
+
+        // Add an item with an expiration duration
+        public void Add(TKey key, TValue value, TimeSpan duration)
+        {
+            items[key] = new CacheItem(
+                value,
+                DateTime.UtcNow.Add(duration)
+            );
+        }
+
+        // Get an item; return default if missing or expired
+        public TValue Get(TKey key)
+        {
+            if (!items.TryGetValue(key, out CacheItem item))
+                return default(TValue);
+
+            if (DateTime.UtcNow >= item.Expiration)
+            {
+                items.Remove(key);
+                return default(TValue);
+            }
+
+            return item.Value;
+        }
+
+        // Remove an item
+        public bool Remove(TKey key)
+        {
+            return items.Remove(key);
+        }
+
+        // Check whether an item exists and has not expired
+        public bool Contains(TKey key)
+        {
+            if (!items.TryGetValue(key, out CacheItem item))
+                return false;
+
+            if (DateTime.UtcNow >= item.Expiration)
+            {
+                items.Remove(key);
+                return false;
+            }
+
+            return true;
+        }
+    }
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
