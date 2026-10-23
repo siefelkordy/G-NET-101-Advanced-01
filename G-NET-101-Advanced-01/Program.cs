@@ -215,6 +215,10 @@ namespace G_NET_101_Advanced_01
     #region Q.18
     //static members in a generic class are shared across all instances of the class, regardless of the type parameter. This means that if you have a static member in a generic class, it will be the same for all instances of that class, regardless of the type parameter used to create the instance. This can be useful for storing shared data or functionality that is not specific to any particular type parameter.
     #endregion
+
+    #region Q.19
+    //You can inherit from a generic class in C# by specifying the type parameter when defining the derived class. The derived class can then use the generic type parameter in its own methods and properties, allowing for greater flexibility and reusability of the code.
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
