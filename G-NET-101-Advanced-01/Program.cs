@@ -121,16 +121,35 @@ namespace G_NET_101_Advanced_01
 
     #region Q.9
     //The new() constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the new() constraint to a type parameter, it means that the type argument must have a public parameterless constructor. This constraint ensures that the generic type can only be instantiated with types that can be created using the default constructor, which can be useful when you need to create instances of the generic type within the class or method.
-    public class Container<T> where T : new()
+    //public class Container<T> where T : new()
+    //{
+    //    public T Value { get; set; }
+    //    public Container()
+    //    {
+    //        Value = new T();
+    //    }
+    //}
+
+    #endregion
+
+    #region Q.10
+    //The interface constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the interface constraint to a type parameter, it means that the type argument must implement a specific interface. This constraint ensures that the generic type can only be instantiated with types that provide the required functionality defined by the interface, which can be useful when you need to work with specific behaviors or methods of the generic type.
+    public class Container<T> where T : IComparable<T>
     {
         public T Value { get; set; }
-        public Container()
+        public Container(T value)
         {
-            Value = new T();
+            Value = value;
+        }
+        public bool IsGreaterThan(T other)
+        {
+            return Value.CompareTo(other) > 0;
         }
     }
 
     #endregion
+
+
 
     internal class Program
     {
