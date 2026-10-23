@@ -59,26 +59,38 @@ namespace G_NET_101_Advanced_01
 
     #region Q.5
 
-    public class FindMaxExample
-    {
-        public static T FindMax<T>(T a, T b) where T : IComparable<T>
-        {
-            T maxValue;
-            if(a.CompareTo(b) > 0)
-            {
-                maxValue = a;
-            }
-            else
-            {
-                maxValue = b;
-            }
-            return maxValue;
-        }
-    }
+    //public class FindMaxExample
+    //{
+    //    public static T FindMax<T>(T a, T b) where T : IComparable<T>
+    //    {
+    //        T maxValue;
+    //        if(a.CompareTo(b) > 0)
+    //        {
+    //            maxValue = a;
+    //        }
+    //        else
+    //        {
+    //            maxValue = b;
+    //        }
+    //        return maxValue;
+    //    }
+    //}
 
 
     #endregion
 
+    #region Q.6
+    //A generic interface is an interface that can work with any data type. It allows you to define an interface with a placeholder for the data type, which can be specified when implementing the interface. This provides flexibility and reusability in your code.
+    public interface Irepository<T>
+    { 
+    void Add(T item);
+    T Read(T item);
+     void Update(T item);
+     void Delete(T item);
+    }
+
+
+    #endregion
 
     internal class Program
     {
