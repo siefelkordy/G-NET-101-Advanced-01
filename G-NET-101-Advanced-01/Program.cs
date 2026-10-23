@@ -177,25 +177,30 @@ namespace G_NET_101_Advanced_01
     #endregion
 
     #region Q.14
-    public class SafeList<T>
-    {
-        private List<T> items = new List<T>();
+    //public class SafeList<T>
+    //{
+    //    private List<T> items = new List<T>();
 
-        public void Add(T item)
-        {
-            items.Add(item);
-        }
+    //    public void Add(T item)
+    //    {
+    //        items.Add(item);
+    //    }
 
-        public T Get(int index)
-        {
-            if (index < 0 || index >= items.Count)
-            {
-                return default(T);
-            }
+    //    public T Get(int index)
+    //    {
+    //        if (index < 0 || index >= items.Count)
+    //        {
+    //            return default(T);
+    //        }
 
-            return items[index];
-        }
-    }
+    //        return items[index];
+    //    }
+    //}
+    #endregion
+
+    #region Q.15
+    //Covariance allows you to use a more derived type (child class) where a less derived type (parent class) is expected.
+    //Covariance is achieved using the out keyword in C#. It allows you to use a more derived type (child class) where a less derived type (parent class) is expected. This is useful when working with collections or interfaces that return values of a specific type, as it allows for greater flexibility in the types that can be used.
     #endregion
     internal class Program
     {
