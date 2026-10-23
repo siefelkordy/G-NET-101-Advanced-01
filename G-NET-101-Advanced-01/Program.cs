@@ -208,6 +208,9 @@ namespace G_NET_101_Advanced_01
     //Contravariance is achieved using the in keyword in C#. It allows you to use a less derived type (parent class) where a more derived type (child class) is expected. This is useful when working with collections or interfaces that accept values of a specific type, as it allows for greater flexibility in the types that can be used.
     #endregion
 
+    #region Q.17
+    //The difference between covariance and contravariance in C# is that covariance allows you to use a more derived type (child class) where a less derived type (parent class) is expected, while contravariance allows you to use a less derived type (parent class) where a more derived type (child class) is expected. Covariance is achieved using the out keyword, while contravariance is achieved using the in keyword.
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
