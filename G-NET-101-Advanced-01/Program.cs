@@ -151,17 +151,26 @@ namespace G_NET_101_Advanced_01
 
     #region Q.11
     //The base class constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the base class constraint to a type parameter, it means that the type argument must inherit from a specific base class. This constraint ensures that the generic type can only be instantiated with types that derive from the specified base class, which can be useful when you need to work with specific properties or methods of the base class.
-    public class Container<T> where T : BaseClass
-    {
-        public T Value { get; set; }
-        public Container(T value)
-        {
-            Value = value;
-        }
-    }
+    //public class Container<T> where T : BaseClass
+    //{
+    //    public T Value { get; set; }
+    //    public Container(T value)
+    //    {
+    //        Value = value;
+    //    }
+    //}
     #endregion
 
-
+    #region Q.12
+    //public class Container<T> where T : baseclass,IComparable<T>,new()
+    //{
+    //    public T Value { get; set; }
+    //    public Container()
+    //    {
+    //        Value = new T();
+    //    }
+    //}
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
