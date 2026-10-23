@@ -211,6 +211,10 @@ namespace G_NET_101_Advanced_01
     #region Q.17
     //The difference between covariance and contravariance in C# is that covariance allows you to use a more derived type (child class) where a less derived type (parent class) is expected, while contravariance allows you to use a less derived type (parent class) where a more derived type (child class) is expected. Covariance is achieved using the out keyword, while contravariance is achieved using the in keyword.
     #endregion
+
+    #region Q.18
+    //static members in a generic class are shared across all instances of the class, regardless of the type parameter. This means that if you have a static member in a generic class, it will be the same for all instances of that class, regardless of the type parameter used to create the instance. This can be useful for storing shared data or functionality that is not specific to any particular type parameter.
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
