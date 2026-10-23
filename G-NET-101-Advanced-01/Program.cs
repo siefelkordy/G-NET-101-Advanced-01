@@ -108,17 +108,29 @@ namespace G_NET_101_Advanced_01
 
     #region Q.8
     //A class constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the class constraint to a type parameter, it means that the type argument must be a reference type (i.e., a class) and cannot be a value type (i.e., a struct). This constraint ensures that the generic type can only be instantiated with reference types, which can help improve performance and reduce memory overhead in certain scenarios.
-    public class Container<T> where T : class
+    //public class Container<T> where T : class
+    //{
+    //    public T Value { get; set; }
+    //    public Container(T value)
+    //    {
+    //        Value = value;
+    //    }
+    //}
+
+    #endregion
+
+    #region Q.9
+    //The new() constraint in C# is used to restrict the types that can be used as type parameters in a generic class or method. When you apply the new() constraint to a type parameter, it means that the type argument must have a public parameterless constructor. This constraint ensures that the generic type can only be instantiated with types that can be created using the default constructor, which can be useful when you need to create instances of the generic type within the class or method.
+    public class Container<T> where T : new()
     {
         public T Value { get; set; }
-        public Container(T value)
+        public Container()
         {
-            Value = value;
+            Value = new T();
         }
     }
 
     #endregion
-
 
     internal class Program
     {
